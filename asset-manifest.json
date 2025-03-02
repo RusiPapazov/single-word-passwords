@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/single-word-passwords/static/css/main.f5cce8d4.css",
+    "main.js": "/single-word-passwords/static/js/main.a2eb22e5.js",
+    "static/js/453.c848e6a4.chunk.js": "/single-word-passwords/static/js/453.c848e6a4.chunk.js",
+    "index.html": "/single-word-passwords/index.html",
+    "main.f5cce8d4.css.map": "/single-word-passwords/static/css/main.f5cce8d4.css.map",
+    "main.a2eb22e5.js.map": "/single-word-passwords/static/js/main.a2eb22e5.js.map",
+    "453.c848e6a4.chunk.js.map": "/single-word-passwords/static/js/453.c848e6a4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5cce8d4.css",
+    "static/js/main.a2eb22e5.js"
+  ]
+}
