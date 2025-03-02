@@ -1,8 +1,8 @@
 {
-  "name": "skeleton",
+  "name": "single-word-passwords",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://the-broken-tile.io/skeleton",
+  "homepage": "https://RusiPapazov.io/single-word-passwords",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

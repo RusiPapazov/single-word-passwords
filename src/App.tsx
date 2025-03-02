@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ReactElement, useEffect, useState } from 'react';
 import './App.css';
+import words from './words.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: () => ReactElement = (): ReactElement => {
+    const [word, setWord] = useState<string>('');
+
+    const tick: () => void = (): void => {
+        const now = new Date();
+
+        const index: number = now.getMinutes() % words.length;
+        setWord(words[index]);
+    };
+
+    useEffect((): () => void => {
+        const interval = setInterval(tick, 1000);
+
+        return (): void => clearInterval(interval);
+    });
+
+    return (
+        <div>
+            <span className="word-of-the-hour">{word}</span>
+        </div>
+    );
+};
 
 export default App;
