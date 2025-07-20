@@ -1,21 +1,26 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, {JSXElementConstructor, ReactElement, useEffect, useState} from 'react';
 import './App.css';
-import words from './words.json';
+import WordProvider from './WordProvider';
+
+const TIME: number = 86400000;
+const INTERVAL: number = 60 * 1000;
+
+const wordProvider = new WordProvider(Math.floor(Date.now() / TIME));
 
 const pad = (n: number): string => n.toString().padStart(2, '0');
 
-const App = (): ReactElement => {
+const App = (): ReactElement<void, JSXElementConstructor<void>> => {
     const [word, setWord] = useState<string>('');
-    const [now, setNow] = useState<Date>(new Date());
     const [timeLeft, setTimeLeft] = useState<number>(0);
 
     const tick = (): void => {
-        const newNow = new Date();
-        setNow(newNow);
+        const now = new Date();
 
-        const index: number = newNow.getMinutes() % words.length;
-        setWord(words[index]);
-        setTimeLeft(getTimeLeft());
+        const words: string[] = wordProvider.words;
+        const intervalsSinceHour: number = Math.floor((now.getTime() % (60 * 60 * 1000)) / INTERVAL);
+
+        setWord(words[intervalsSinceHour % words.length]);
+        setTimeLeft(getTimeLeft(now));
     };
 
     const formatTimeLeft= (ms: number): string  => {
@@ -31,11 +36,7 @@ const App = (): ReactElement => {
         return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
     }
 
-    const getTimeLeft = (): number => {
-        const seconds = now.getSeconds();
-        const milliseconds = now.getMilliseconds();
-        return (60 - seconds) * 1000 - milliseconds;
-    };
+    const getTimeLeft = (now: Date): number => INTERVAL - (now.getTime() % INTERVAL);
 
     useEffect(() => {
         const interval = setInterval(tick, 1000);
@@ -43,12 +44,10 @@ const App = (): ReactElement => {
         return (): void => clearInterval(interval);
     });
 
-    return (
-        <>
-            <span className="word-of-the-hour">{word}</span>
-            <span className="time-left">{formatTimeLeft(timeLeft)}</span>
-        </>
-    );
+    return <>
+        <span className="word-of-the-hour">{word}</span>
+        <span className="time-left">{formatTimeLeft(timeLeft)}</span>
+    </>;
 };
 
 export default App;
