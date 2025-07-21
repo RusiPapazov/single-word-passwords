@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "What the pass",
+  "version": "0.1",
+  "name": "What the current password",
   "icons": [
     {
       "src": "favicon.ico",

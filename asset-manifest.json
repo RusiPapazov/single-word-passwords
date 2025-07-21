@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/single-word-passwords/static/css/main.62601ee0.css",
-    "main.js": "/single-word-passwords/static/js/main.871a50a7.js",
+    "main.css": "/single-word-passwords/static/css/main.e58dfc2f.css",
+    "main.js": "/single-word-passwords/static/js/main.d72ef0b1.js",
     "static/js/453.3e68c82e.chunk.js": "/single-word-passwords/static/js/453.3e68c82e.chunk.js",
     "index.html": "/single-word-passwords/index.html",
-    "main.62601ee0.css.map": "/single-word-passwords/static/css/main.62601ee0.css.map",
-    "main.871a50a7.js.map": "/single-word-passwords/static/js/main.871a50a7.js.map",
+    "main.e58dfc2f.css.map": "/single-word-passwords/static/css/main.e58dfc2f.css.map",
+    "main.d72ef0b1.js.map": "/single-word-passwords/static/js/main.d72ef0b1.js.map",
     "453.3e68c82e.chunk.js.map": "/single-word-passwords/static/js/453.3e68c82e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62601ee0.css",
-    "static/js/main.871a50a7.js"
+    "static/css/main.e58dfc2f.css",
+    "static/js/main.d72ef0b1.js"
   ]
 }
