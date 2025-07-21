@@ -7,24 +7,26 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: #333;
     background-color: whitesmoke;
-}
-
-.word-of-the-hour {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 90vh;
-    font-size: 5em;
-    font-weight: bold;
+    user-select: none;
 }
 
 .time-left {
+    height: 30vh;
+
+    font-size: 2em;
+}
+
+.word-of-the-hour {
+    height: 70vh;
+
+    font-size: 5em;
+}
+
+.row {
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    font-size: 2em;
+
+    text-align: center;
     font-weight: bold;
 }

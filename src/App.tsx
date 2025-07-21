@@ -47,8 +47,8 @@ const App = (): ReactElement<void, JSXElementConstructor<void>> => {
     useScrollToTop();
 
     return <>
-        <span className="word-of-the-hour">{word}</span>
-        <span className="time-left">{formatTimeLeft(timeLeft)}</span>
+        <span className="word-of-the-hour row">{word}</span>
+        <span className="time-left row">{formatTimeLeft(timeLeft)}</span>
     </>;
 };
 
