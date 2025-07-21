@@ -1,6 +1,7 @@
 import React, {JSXElementConstructor, ReactElement, useEffect, useState} from 'react';
 import './App.css';
 import WordProvider from './WordProvider';
+import useScrollToTop from "./hooks/useScrollToTop";
 
 const TIME: number = 86400000;
 const INTERVAL: number = 60 * 1000;
@@ -43,6 +44,7 @@ const App = (): ReactElement<void, JSXElementConstructor<void>> => {
 
         return (): void => clearInterval(interval);
     });
+    useScrollToTop();
 
     return <>
         <span className="word-of-the-hour">{word}</span>
